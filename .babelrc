@@ -1,0 +1,23 @@
+{
+  "presets" : ["es2015", "react", "flow", "stage-2"],
+  "env": {
+    "test": {
+      "plugins": [
+        [
+          "module-resolver", {
+            "root": ["./app"],
+            "alias": {
+              "Components": "./app/src/components",
+              "Helpers": "./helpers",
+              "Selectors": "./app/src/selectors",
+              "Utils": "./app/src/utils",
+              "Assets": "./app/src/assets"
+            }
+          },
+          "transform-class-properties",
+          "babel-plugin-webpack-alias", { "config": "./webpack.config.dev.babel.js" }
+        ]
+      ]
+    }
+  }
+}
